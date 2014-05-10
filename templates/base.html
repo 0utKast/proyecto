@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Curso de Django. Videotutoriales.com | {% block title %}Inicio{% endblock %}</title>
+</head>
+<body>
+    <div id="header">
+         {% if user.is_authenticated %}
+            <p> Bienvenido, <b> {{ user.username }} </b> </p>
+        {% else %}
+            <p>Bienvenido. Por favor <a href="{% url "login" %}">log in</a></p>
+        {% endif %}
+
+        <h1>Curso de Django. Videotutoriales.com</h1>
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+<div id="navigation">
+      <p><a href="{% url "homepage" %}">Inicio</a> | <a href="{% url "preguntas" %}">Preguntas</a></p>
+    </div>.
+
+</body>
+</html>
+
+
+
+
+
